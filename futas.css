@@ -1,0 +1,25 @@
+*{box-sizing:border-box;font-family:Segoe UI, Roboto, Arial, sans-serif}
+body{margin:0;background:#f3f4f6;color:#111}
+header{background:#0b5;padding:18px 24px;color:#032;}
+header h1{margin:0}
+.tarolo{display:grid;grid-template-columns:1fr 1fr 320px;gap:16px;padding:16px}
+.panel{background:#fff;border-radius:8px;padding:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+#urlap-panel form{display:flex;flex-direction:column;gap:8px}
+label{font-weight:600;font-size:0.9rem}
+input,select,textarea,button{padding:8px;border:1px solid #ddd;border-radius:6px}
+.urlap-gombok{display:flex;gap:8px}
+button{cursor:pointer;background:#0b5;color:white;border:none}
+button#torles-gomb{background:#ccc;color:#111}
+#futasok-lista{display:flex;flex-direction:column;gap:8px}
+.run-item{border:1px solid #eee;padding:8px;border-radius:6px;display:flex;flex-direction:column}
+.run-main{display:flex;justify-content:space-between;align-items:center}
+.run-left{display:flex;flex-direction:column}
+.run-date{font-weight:700}
+.run-stats{display:flex;gap:12px;color:#444}
+.run-actions{display:flex;gap:8px;margin-top:8px}
+.run-actions button{background:#198; padding:6px 8px}
+.run-actions .del-btn{background:#c33}
+.empty{color:#666;padding:12px}
+.osszegzes-sor{margin:6px 0}
+footer{padding:12px 16px;font-size:0.85rem;color:#444}
+@media (max-width:900px){.tarolo{grid-template-columns:1fr;}}
