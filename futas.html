@@ -1,11 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Futási napló (SPA)</title>
+    <link rel="stylesheet" href="futas.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Futási napló</h1>
+    </header>
+    <main class="tarolo">
+        <section class="panel" id="urlap-panel">
+            <h2>Futás rögzítése</h2>
+            <form id="futas-urlap">
+                <input type="hidden" id="futas-azonosito">
+                <label for="datum">Dátum</label>
+                <input type="date" id="datum" required>
+
+                <label for="tav">Távolság (km)</label>
+                <input type="number" id="tav" step="0.01" min="0" required>
+
+                <label for="ido">Idő (perc)</label>
+                <input type="number" id="ido" step="0.01" min="0" required>
+
+                <label for="testsuly">Testsúly (kg)</label>
+                <input type="number" id="testsuly" step="0.1" min="1" value="70">
+
+                <label for="met">MET érték (tevékenység)</label>
+                <select id="met">
+                    <option value="8">Könnyű futás (~8 MET)</option>
+                    <option value="9.8" selected>Ésszerű futás (~9.8 MET)</option>
+                    <option value="11">Gyors futás (~11 MET)</option>
+                    <option value="12.8">Nagy sebesség (~12.8 MET)</option>
+                </select>
+
+                <label for="megjegyzes">Megjegyzés</label>
+                <textarea id="megjegyzes" rows="2"></textarea>
+
+                <div class="urlap-gombok">
+                    <button type="submit" id="mentes-gomb">Mentés</button>
+                    <button type="button" id="torles-gomb">Mégse</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel" id="lista-panel">
+            <h2>Futások</h2>
+            <div id="futasok-lista"></div>
+        </section>
+
+        <section class="panel" id="osszegzes-panel">
+            <h2>Összesítések</h2>
+            <div class="osszegzes-sor">Összes távolság: <span id="ossz-tav">0</span> km</div>
+            <div class="osszegzes-sor">Átlagsebesség: <span id="atlag-seb">0</span> km/h</div>
+            <div class="osszegzes-sor">Összes elégetett kalória: <span id="ossz-kaloria">0</span> kcal</div>
+
+            <h3>Célkitűzés</h3>
+            <label for="heti-cel">Heti cél (km)</label>
+            <input type="number" id="heti-cel" step="0.1" min="0" value="20">
+            <button id="cel-mentes">Cél mentése</button>
+            <div class="osszegzes-sor">Heti teljesítés: <span id="heti-teljesites">0</span> / <span id="heti-cel-ertek">0</span> km</div>
+        </section>
+    </main>
+
+    <footer>
+        <small>Egyszerű SPA futási napló — adatok a böngészőben tárolódnak (localStorage)</small>
+    </footer>
+
+    <script src="futas.js"></script>
 </body>
 </html>
